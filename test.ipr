@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactManager">
+    <artifact type="exploded-war" name="test:GrailsWeb exploded">
+      <root id="root">
+        <element id="javaee-facet-resources" facet="test/web/GrailsWeb" />
+      </root>
+    </artifact>
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="CopyrightManager" default="" />
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+        <inspection_tool class="BreakStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="BreakStatementWithLabel" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="ConditionalExpression" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="ignoreSimpleAssignmentsAndReturns" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ConditionalExpressionWithIdenticalBranches" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="ConfusingElse" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="reportWhenNoStatementFollow" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ContinueStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="ContinueStatementWithLabel" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="DefaultNotLastCaseInSwitch" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="DuplicateBooleanBranch" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="DuplicateCondition" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="ignoreMethodCalls" value="false" />
+        </inspection_tool>
+        <inspection_tool class="EnumSwitchStatementWhichMissesCases" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="ignoreSwitchStatementsWithDefault" value="false" />
+        </inspection_tool>
+        <inspection_tool class="FallthruInSwitchStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="ForLoopReplaceableByWhile" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_ignoreLoopsWithoutConditions" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ForLoopWithMissingComponent" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="ignoreCollectionLoops" value="false" />
+        </inspection_tool>
+        <inspection_tool class="IfMayBeConditional" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="IfStatementWithIdenticalBranches" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="IfStatementWithTooManyBranches" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_limit" value="3" />
+        </inspection_tool>
+        <inspection_tool class="LabeledStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="LoopConditionNotUpdatedInsideLoop" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="ignoreIterators" value="false" />
+        </inspection_tool>
+        <inspection_tool class="LoopWithImplicitTerminationCondition" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="NegatedConditional" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_ignoreNegatedNullComparison" value="true" />
+        </inspection_tool>
+        <inspection_tool class="NegatedConditionalExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="NegatedEqualityExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="NegatedIfElse" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_ignoreNegatedNullComparison" value="true" />
+          <option name="m_ignoreNegatedZeroComparison" value="false" />
+        </inspection_tool>
+        <inspection_tool class="NestedConditionalExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="NestedSwitchStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="OverlyComplexBooleanExpression" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_limit" value="3" />
+          <option name="m_ignorePureConjunctionsDisjunctions" value="true" />
+        </inspection_tool>
+        <inspection_tool class="PointlessIndexOfComparison" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="PointlessNullCheck" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="SwitchStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="SwitchStatementDensity" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_limit" value="20" />
+        </inspection_tool>
+        <inspection_tool class="SwitchStatementWithConfusingDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="SwitchStatementWithTooFewBranches" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_limit" value="2" />
+        </inspection_tool>
+        <inspection_tool class="SwitchStatementWithTooManyBranches" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_limit" value="10" />
+        </inspection_tool>
+        <inspection_tool class="SwitchStatementsWithoutDefault" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_ignoreFullyCoveredEnums" value="true" />
+        </inspection_tool>
+        <inspection_tool class="ThrowablePrintStackTrace" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="UnnecessaryDefault" enabled="true" level="WARNING" enabled_by_default="true" />
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
+  </component>
+  <component name="ProjectFileVersion" converted="true" />
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-grailsPlugins.iml" filepath="$PROJECT_DIR$/test-grailsPlugins.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+  <component name="libraryTable">
+    <library name="Grails 2.3.11">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-docs-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-codecs-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-spring-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-test-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-wrapper-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-wrapper-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-scripts-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-datasource-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-converters-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-datasource-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-databinding-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-resources-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-converters-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-databinding-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-test-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-rest-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-url-mappings-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-i18n-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-gsp-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-spring-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-url-mappings-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-async-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-web-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-docs-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-logging-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-log4j-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-domain-class-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-testing-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-controllers-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-scripts-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-async-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-servlets-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-services-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-converters-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-bootstrap-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-log4j-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-async-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-aether-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-databinding-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-mimetypes-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-validation-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-core-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-controllers-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-gsp-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-wrapper-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-resources-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-async-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-aether-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-filters-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-wrapper-support-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-databinding-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-testing-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-filters-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-validation-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-rest-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-url-mappings-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-mimetypes-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-servlets-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-logging-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-core-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-test-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-codecs-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-controllers-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-i18n-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-core-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-codecs-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-validation-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-spring-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-services-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-databinding-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-async-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-log4j-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-web-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-docs-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-i18n-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-gsp-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-domain-class-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-services-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-scripts-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-databinding-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-web-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-resources-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-aether-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-datasource-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-rest-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-async-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-filters-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-servlets-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-bootstrap-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-bootstrap-2.3.11.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-mimetypes-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-testing-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-plugin-domain-class-2.3.11-javadoc.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-logging-2.3.11-sources.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="org.hibernate:hibernate-core:3.6.10.Final" type="repository">
+      <properties maven-id="org.hibernate:hibernate-core:3.6.10.Final" />
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.6/antlr-2.7.6.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.1/commons-collections-3.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/transaction/jta/1.1/jta-1.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/jboss/javaee/jboss-jacc-api_JDK4/1.1.0/jboss-jacc-api_JDK4-1.1.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/ant/ant/1.6.5/ant-1.6.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
+</project>
