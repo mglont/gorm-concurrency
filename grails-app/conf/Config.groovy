@@ -110,9 +110,8 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
-    rollingFile name: "infoAppender", file: "logs/info.log",
-            threshold: Level.INFO
-
+    rollingFile name: "infoAppender", file: "logs/info.log", threshold: Level.TRACE
+    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n'), threshold: Level.WARN
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -122,9 +121,11 @@ log4j = {
            'org.codehaus.groovy.grails.commons',            // core / classloading
            'org.codehaus.groovy.grails.plugins',            // plugins
            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
-    info infoAppender: ['org.hibernate',
-         'net.sf.ehcache.hibernate']
+           'org.springframework'
+
+    trace infoAppender: ['org.hibernate', 'net.sf.ehcache.hibernate',
+                         'org.codehaus.groovy.grails.plugins',
+                         'org.codehaus.groovy.grails.orm.hibernate',
+                         'org.springframework'
+    ]
 }
