@@ -5,7 +5,7 @@ import org.codehaus.groovy.grails.orm.hibernate.HibernateEventListeners
 //noinspection GroovyUnusedAssignment
 beans = {
     persistenceListener(HibernateEventSniffer)
-    hibernateEventListeners(HibernateEventListeners) {
+/*    hibernateEventListeners(HibernateEventListeners) {
         listenerMap = [
                 'auto-flush': persistenceListener,
                 'flush-entity' : persistenceListener,
@@ -17,5 +17,5 @@ beans = {
                 'post-insert' : persistenceListener,
                 'create-onflush' : persistenceListener
         ]
-    }
+    }*/
 }
