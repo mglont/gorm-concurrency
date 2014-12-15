@@ -155,6 +155,7 @@
           <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/lib/org.apache.ant/ant-launcher/jars/ant-launcher-1.8.4.jar!/" />
           <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/lib/org.apache.ant/ant/jars/ant-1.8.4.jar!/" />
           <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/lib/jline/jline/jars/jline-2.12.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
