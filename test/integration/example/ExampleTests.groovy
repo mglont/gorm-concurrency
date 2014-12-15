@@ -69,7 +69,10 @@ class ExampleTests {
                                 assertNull(User.findByUsername(un))
                                 def newUser = new User(username: un, password: "letMeIn")
                                 assertTrue(newUser.validate())
-                                assertNotNull(newUser.save())
+                                assertNotNull(newUser.save(validate: false))
+                                assertFalse(newUser.hasErrors())
+                                assertEquals(0, newUser.errors.allErrors.size())
+                                assertNotNull(newUser)
                                 userRefs.compareAndSet(i, null, newUser)
 
                                 //TODO getting something inserted in another session is problematic
