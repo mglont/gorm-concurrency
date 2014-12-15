@@ -43,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-build-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-provided-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/work/process-lock" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/resources" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/scriptCache" />
     </content>
@@ -150,6 +151,10 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.gvm/grails/current/src/grails-datastore-gorm-3.1.0.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.gvm/grails/current/src/grails-datastore-core-3.1.0.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/grails-datastore-gorm-hibernate-3.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/spring-orm-3.2.8.RELEASE-sources.jar!/" />
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>

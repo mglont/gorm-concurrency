@@ -157,7 +157,12 @@
           <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/lib/jline/jline/jars/jline-2.12.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gvm/grails/current/src/grails-datastore-gorm-3.1.0.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.gvm/grails/current/src/grails-datastore-core-3.1.0.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/grails-datastore-gorm-hibernate-3.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/spring-orm-3.2.8.RELEASE-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

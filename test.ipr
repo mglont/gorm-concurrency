@@ -65,6 +65,7 @@
         <inspection_tool class="ForLoopWithMissingComponent" enabled="true" level="WARNING" enabled_by_default="true">
           <option name="ignoreCollectionLoops" value="false" />
         </inspection_tool>
+        <inspection_tool class="GroovyUnusedDeclaration" enabled="false" level="WARNING" enabled_by_default="false" />
         <inspection_tool class="IfMayBeConditional" enabled="true" level="WARNING" enabled_by_default="true" />
         <inspection_tool class="IfStatementWithIdenticalBranches" enabled="true" level="WARNING" enabled_by_default="true" />
         <inspection_tool class="IfStatementWithTooManyBranches" enabled="true" level="WARNING" enabled_by_default="true">
@@ -126,6 +127,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="Grails 2.3.11">
@@ -226,7 +228,9 @@
         <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/dist/grails-logging-2.3.11-sources.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/src/grails-core-2.3.11-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="org.hibernate:hibernate-core:3.6.10.Final" type="repository">
       <properties maven-id="org.hibernate:hibernate-core:3.6.10.Final" />
