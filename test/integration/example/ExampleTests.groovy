@@ -77,7 +77,6 @@ class ExampleTests {
                                 assertEquals 1, User.count() // SHOULD BE assertEquals 10+i, User.count()
 
                             }
-                            //session.flush()
                         }
                     } finally {
                         finishLatch.countDown()
@@ -95,7 +94,7 @@ class ExampleTests {
         assertTrue pool.isTerminated()
 
         // see what we got
-        10.times{ i ->
+        10.times { i ->
             User expected = User.findByUsername("testUser$i")
             assertNotNull expected
         }
