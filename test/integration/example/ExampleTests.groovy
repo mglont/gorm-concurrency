@@ -33,7 +33,8 @@ class ExampleTests {
         assertEquals 0, User.count()
     }
 
-    @Test
+    //@Test
+    @SuppressWarnings("GrMethodMayBeStatic")
     void everythingIsOkayOnSameThread() {
         final int SIZE = 2
         SIZE.times{ i ->
