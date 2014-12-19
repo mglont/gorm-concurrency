@@ -5,7 +5,6 @@
       <configuration>
         <webroots>
           <root url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" relative="/" />
-          <root url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.8/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/web-app" relative="/" />
         </webroots>
         <sourceRoots />
@@ -20,12 +19,6 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.7">
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.7/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.7/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.7/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.7/grails-app/taglib" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/controllers" isTestSource="false" />
@@ -38,22 +31,9 @@
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.8">
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.8/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.8/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.8/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.8/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.0.3">
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.0.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.0.3/src/groovy" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.54">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.54/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.54/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -167,6 +147,7 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/3.2.8.RELEASE/spring-orm-3.2.8.RELEASE-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ideaLibSources/spring-tx-3.2.9.RELEASE-sources.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/3.2.8.RELEASE/spring-tx-3.2.8.RELEASE-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/3.2.8.RELEASE/spring-core-3.2.8.RELEASE-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
