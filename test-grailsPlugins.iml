@@ -148,6 +148,7 @@
           <root url="jar://$USER_HOME$/.ideaLibSources/spring-tx-3.2.9.RELEASE-sources.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/3.2.8.RELEASE/spring-tx-3.2.8.RELEASE-sources.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/3.2.8.RELEASE/spring-core-3.2.8.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/junit-4.11-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

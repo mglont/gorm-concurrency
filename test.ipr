@@ -230,6 +230,7 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/src/grails-core-2.3.11-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gvm/grails/2.3.11/src/grails-test-2.3.11-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="org.hibernate:hibernate-core:3.6.10.Final" type="repository">
