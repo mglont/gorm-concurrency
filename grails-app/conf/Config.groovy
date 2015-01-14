@@ -124,8 +124,8 @@ log4j = {
            'org.springframework'
 
     trace infoAppender: ['org.hibernate', 'net.sf.ehcache.hibernate',
-                         'org.codehaus.groovy.grails.plugins',
                          'org.codehaus.groovy.grails.orm.hibernate',
-                         'org.springframework'
+                         'org.springframework',
+                         'org.springframework.transaction'
     ]
 }
