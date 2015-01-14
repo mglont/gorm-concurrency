@@ -29,6 +29,9 @@ environments {
             username = "foo"
             password = "bar"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            properties {
+                //defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_UNCOMMITTED
+            }
         }
     }
     production {
