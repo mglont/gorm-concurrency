@@ -1,11 +1,7 @@
 package example
 
-import grails.transaction.NotTransactional
-import org.hibernate.Session
 import org.springframework.transaction.TransactionDefinition
 
-import java.sql.Connection
-import java.sql.SQLException
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -13,30 +9,42 @@ import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicReferenceArray
 import grails.test.mixin.TestMixin
 import grails.test.mixin.integration.IntegrationTestMixin
-import org.hibernate.jdbc.Work
 import org.junit.*
 import static org.junit.Assert.*
 
 @TestMixin(IntegrationTestMixin)
 class ExampleTests {
+    final int SIZE = 2 * Runtime.getRuntime().availableProcessors()
+    final int ORIG_SIZE = 10
+    ExecutorService pool = Executors.newFixedThreadPool(SIZE)
 
-    @grails.transaction.NotTransactional
     @Before
     void setUp() {
-        User.withNewSession { session ->
-            User.withTransaction([
-                isolationLevel: TransactionDefinition.ISOLATION_READ_COMMITTED
-            ]) {
-                for (int i = 0; i < 10; i++) {
-                    def user = new User(username: "testUser$i", password: "secret")
-                    assertTrue user.validate()
-                    assertFalse user.hasErrors()
-                    assertNotNull(user.save(validate: false))
+        final CountDownLatch finishLatch = new CountDownLatch(1)
+        // use a separate thread to ensure data is in the db
+        pool.submit(new Runnable() {
+            void run() {
+                try {
+                    User.withNewSession { session ->
+                        User.withTransaction {
+                            for (int i = 0; i < ORIG_SIZE; i++) {
+                                def user = new User(username: "testUser$i", password: "secret")
+                                assertTrue user.validate()
+                                assertFalse user.hasErrors()
+                                assertNotNull(user.save(validate: false))
+                            }
+                        }
+                        session.flush()
+                    }
+                } catch (Exception e) {
+                    fail( "setup error $e.message")
+                } finally {
+                    finishLatch.countDown()
                 }
             }
-            session.flush()
-        }
-        assertEquals 10, User.withNewSession { User.count() }
+        })
+        finishLatch.await()
+        assertEquals ORIG_SIZE, User.withNewSession { User.count() }
     }
 
     @After
@@ -48,29 +56,12 @@ class ExampleTests {
         assertEquals 0, User.withNewSession { User.count() }
     }
 
-    //@Test
-    @SuppressWarnings(["GrMethodMayBeStatic", "GroovyUnusedDeclaration"])
-    void everythingIsOkayOnSameThread() {
-        final int SIZE = 2
-        for (int i = 0; i < SIZE; i++) {
-            def someUser = User.findByUsername("testUser$i")
-            // creating new content in this session is all right
-            def newUser = new User(username: "testUser${10 + i}", password: "letMeIn")
-            assertTrue newUser.validate()
-            assertNotNull newUser.save(validate: false, failOnError: true, flush: true)
-            assertNotNull someUser
-            assertEquals(11 + i, User.count())
-        }
-    }
-
     @Test
     void testConcurrentSubmissions() {
-        assertEquals 10, User.count()
-        final int SIZE = 2 * Runtime.getRuntime().availableProcessors() // or any value less than 10
+        assertEquals ORIG_SIZE, User.count()
         final CountDownLatch startLatch = new CountDownLatch(1)
         final CountDownLatch finishLatch = new CountDownLatch(SIZE)
         final AtomicReferenceArray<User> userRefs = new AtomicReferenceArray<>(SIZE)
-        ExecutorService pool = Executors.newFixedThreadPool(SIZE)
         for (int i = 0; i < SIZE; i++) {
             final int j = i
             //assertNotNull User.findByUsername("testUser$i")
@@ -78,43 +69,31 @@ class ExampleTests {
                 @Override
                 void run() {
                     startLatch.await()
-                    String un = "testUser${10 + j}"
+                    String un = "testUser${ORIG_SIZE + j}"
                     try {
-                        User.withNewSession { Session session ->
+                        User.withNewSession { session ->
                             User.withTransaction([
-                                    name: "worker$i".toString(),
+                                    name: "worker$j".toString(),
                                     isolationLevel:
                                             TransactionDefinition.ISOLATION_READ_COMMITTED
                             ]) {
                                 try {
-                                    final Connection c
-                                    session.doWork(new Work() {
-                                        @Override
-                                        void execute(Connection connection) throws SQLException {
-                                            c = connection
-                                        }
-                                    })
                                     // creating new content in this session is all right
                                     assertNull(User.findByUsername(un))
                                     def newUser = new User(username: un, password: "letMeIn")
                                     assertNotNull(newUser.save())
                                     assertFalse(newUser.hasErrors())
                                     assertEquals(0, newUser.errors.allErrors.size())
-                                    userRefs.compareAndSet(i, null, newUser)
+                                    userRefs.compareAndSet(j, null, newUser)
 
                                     //TODO getting something inserted in another session is problematic
                                     def someUser = User.findByUsername("testUser$j")
                                     assertNotNull someUser
-                                    println "$j -- $someUser -- ${User.getAll()}"
-                                    assertEquals 11 + j, User.count()
                                 } catch (Throwable e) {
-                                    println "you got error $e"
-                                    e.printStackTrace()
-                                    println "end of your stack trace"
-                                    //fail("you lose!")
+                                    fail("you got error $e.message")
                                 }
                             }
-                            //session.flush()
+                            session.flush()
                         }
                     } finally {
                         finishLatch.countDown()
@@ -131,27 +110,20 @@ class ExampleTests {
         assertEquals 0, queuingJobs.size()
         assertTrue pool.isTerminated()
 
-        assertEquals SIZE + 10, User.withNewSession { User.count() }
+        // see what we got
+        assertEquals SIZE + ORIG_SIZE, User.withNewSession { User.count() }
 
-        User.withNewSession { session ->
-            User.withTransaction([
-                    name: "mainThread-validation",
-                    isolationLevel: TransactionDefinition.ISOLATION_READ_COMMITTED
-            ]) {
-                // see what we got
-                for (int i = 0; i < SIZE; i++) {
-                    User expected = User.findByUsername("testUser$i")
-                    assertNotNull expected
-                }
+        for (int i = 0; i < SIZE; i++) {
+            User expected = User.findByUsername("testUser$i")
+            assertNotNull expected
+        }
 
-                for (int i = 0; i < SIZE; i++) {
-                    User actual = userRefs.get(i)
-                    User expected = User.findByUsername("testUser${10 + i}")
-                    assertNotNull actual
-                    assertNotNull expected
-                    assertEquals expected, actual
-                }
-            }
+        for (int i = 0; i < SIZE; i++) {
+            User actual = userRefs.get(i)
+            User expected = User.findByUsername("testUser${ORIG_SIZE + i}")
+            assertNotNull actual
+            assertNotNull expected
+            assertEquals expected, actual
         }
     }
 }
