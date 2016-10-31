@@ -23,12 +23,12 @@ environments {
     test {
         dataSource {
             dbCreate = "create-drop"
-            //url = "jdbc:h2:file:/tmp/asyncTestDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-            url = "jdbc:mysql://localhost:3306/foobar"
-            driverClassName = "com.mysql.jdbc.Driver"
+            url = "jdbc:h2:file:/tmp/asyncTestDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            //url = "jdbc:mysql://localhost:3306/foobar"
+            driverClassName = "org.h2.Driver"
             username = "foo"
             password = "bar"
-            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            dialect = "org.hibernate.dialect.H2Dialect"
             properties {
                 //defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_UNCOMMITTED
             }
