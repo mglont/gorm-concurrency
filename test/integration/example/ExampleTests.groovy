@@ -1,7 +1,11 @@
 package example
 
+import grails.transaction.NotTransactional
+import org.hibernate.Session
 import org.springframework.transaction.TransactionDefinition
 
+import java.sql.Connection
+import java.sql.SQLException
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -9,6 +13,7 @@ import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicReferenceArray
 import grails.test.mixin.TestMixin
 import grails.test.mixin.integration.IntegrationTestMixin
+import org.hibernate.jdbc.Work
 import org.junit.*
 import static org.junit.Assert.*
 
@@ -22,7 +27,7 @@ class ExampleTests {
             User.withTransaction([
                 isolationLevel: TransactionDefinition.ISOLATION_READ_COMMITTED
             ]) {
-                10.times { i ->
+                for (int i = 0; i < 10; i++) {
                     def user = new User(username: "testUser$i", password: "secret")
                     assertTrue user.validate()
                     assertFalse user.hasErrors()
@@ -44,10 +49,10 @@ class ExampleTests {
     }
 
     //@Test
-    @SuppressWarnings("GrMethodMayBeStatic")
+    @SuppressWarnings(["GrMethodMayBeStatic", "GroovyUnusedDeclaration"])
     void everythingIsOkayOnSameThread() {
         final int SIZE = 2
-        SIZE.times{ i ->
+        for (int i = 0; i < SIZE; i++) {
             def someUser = User.findByUsername("testUser$i")
             // creating new content in this session is all right
             def newUser = new User(username: "testUser${10 + i}", password: "letMeIn")
@@ -66,36 +71,42 @@ class ExampleTests {
         final CountDownLatch finishLatch = new CountDownLatch(SIZE)
         final AtomicReferenceArray<User> userRefs = new AtomicReferenceArray<>(SIZE)
         ExecutorService pool = Executors.newFixedThreadPool(SIZE)
-        SIZE.times { i ->
-            assertNotNull User.findByUsername("testUser$i")
+        for (int i = 0; i < SIZE; i++) {
+            final int j = i
+            //assertNotNull User.findByUsername("testUser$i")
             pool.submit(new Runnable() {
                 @Override
                 void run() {
                     startLatch.await()
-                    String un = "testUser${10 + i}"
+                    String un = "testUser${10 + j}"
                     try {
-                        User.withNewSession { session ->
+                        User.withNewSession { Session session ->
                             User.withTransaction([
                                     name: "worker$i".toString(),
                                     isolationLevel:
                                             TransactionDefinition.ISOLATION_READ_COMMITTED
                             ]) {
                                 try {
+                                    final Connection c
+                                    session.doWork(new Work() {
+                                        @Override
+                                        void execute(Connection connection) throws SQLException {
+                                            c = connection
+                                        }
+                                    })
                                     // creating new content in this session is all right
                                     assertNull(User.findByUsername(un))
                                     def newUser = new User(username: un, password: "letMeIn")
-                                    assertTrue(newUser.validate())
-                                    assertNotNull(newUser.save(validate: false, failOnError:
-                                            true, flush: true))
+                                    assertNotNull(newUser.save())
                                     assertFalse(newUser.hasErrors())
                                     assertEquals(0, newUser.errors.allErrors.size())
                                     userRefs.compareAndSet(i, null, newUser)
 
                                     //TODO getting something inserted in another session is problematic
-                                    def someUser = User.findByUsername("testUser$i")
-                                    //assertNotNull someUser
-                                    println "$i -- $someUser -- ${User.getAll()}"
-                                    assertEquals 11 + i, User.count()
+                                    def someUser = User.findByUsername("testUser$j")
+                                    assertNotNull someUser
+                                    println "$j -- $someUser -- ${User.getAll()}"
+                                    assertEquals 11 + j, User.count()
                                 } catch (Throwable e) {
                                     println "you got error $e"
                                     e.printStackTrace()
@@ -103,7 +114,7 @@ class ExampleTests {
                                     //fail("you lose!")
                                 }
                             }
-                            session.flush()
+                            //session.flush()
                         }
                     } finally {
                         finishLatch.countDown()
@@ -128,12 +139,12 @@ class ExampleTests {
                     isolationLevel: TransactionDefinition.ISOLATION_READ_COMMITTED
             ]) {
                 // see what we got
-                10.times { i ->
+                for (int i = 0; i < SIZE; i++) {
                     User expected = User.findByUsername("testUser$i")
                     assertNotNull expected
                 }
 
-                SIZE.times { i ->
+                for (int i = 0; i < SIZE; i++) {
                     User actual = userRefs.get(i)
                     User expected = User.findByUsername("testUser${10 + i}")
                     assertNotNull actual
