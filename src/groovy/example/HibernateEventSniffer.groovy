@@ -1,17 +1,18 @@
 package example
 
-import org.codehaus.groovy.grails.orm.hibernate.events.SaveOrUpdateEventListener
 import org.hibernate.HibernateException
-import org.hibernate.event.AbstractEvent
-import org.hibernate.event.AutoFlushEvent
-import org.hibernate.event.AutoFlushEventListener
-import org.hibernate.event.FlushEntityEvent
-import org.hibernate.event.FlushEntityEventListener
-import org.hibernate.event.PersistEvent
-import org.hibernate.event.PersistEventListener
-import org.hibernate.event.PostInsertEvent
-import org.hibernate.event.PostInsertEventListener
-import org.hibernate.event.SaveOrUpdateEvent
+import org.hibernate.event.spi.AbstractEvent
+import org.hibernate.event.spi.AutoFlushEvent
+import org.hibernate.event.spi.AutoFlushEventListener
+import org.hibernate.event.spi.FlushEntityEvent
+import org.hibernate.event.spi.FlushEntityEventListener
+import org.hibernate.event.spi.PersistEvent
+import org.hibernate.event.spi.PersistEventListener
+import org.hibernate.event.spi.PostInsertEvent
+import org.hibernate.event.spi.PostInsertEventListener
+import org.hibernate.event.spi.SaveOrUpdateEvent
+import org.hibernate.event.spi.SaveOrUpdateEventListener
+import org.hibernate.persister.entity.EntityPersister
 
 /**
  * @short Simple Hibernate event listener that prints events to the console.
@@ -19,8 +20,9 @@ import org.hibernate.event.SaveOrUpdateEvent
  * @author Mihai Glonț <mglont@ebi.ac.uk>
  * Date: 09/12/14
  */
-class HibernateEventSniffer extends SaveOrUpdateEventListener implements PostInsertEventListener,
-        AutoFlushEventListener, FlushEntityEventListener, PersistEventListener {
+class HibernateEventSniffer implements PostInsertEventListener, AutoFlushEventListener,
+        SaveOrUpdateEventListener, FlushEntityEventListener, PersistEventListener {
+
     /** Handle the given auto-flush event.
      *
      * @param event The auto-flush event to be handled.
@@ -34,6 +36,11 @@ class HibernateEventSniffer extends SaveOrUpdateEventListener implements PostIns
     @Override
     void onPostInsert(PostInsertEvent event) {
         sniff(event)
+    }
+
+    @Override
+    boolean requiresPostCommitHanding(EntityPersister entityPersister) {
+        return false
     }
 
     @Override

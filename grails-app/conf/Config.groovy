@@ -1,5 +1,3 @@
-import org.apache.log4j.Level
-
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -35,10 +33,6 @@ grails.mime.types = [ // the first one is the default format
 
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
-
-// What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
-grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**']
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
@@ -102,16 +96,12 @@ environments {
 }
 
 // log4j configuration
-//noinspection GroovyUnusedAssignment
-log4j = {
+log4.main = {
     // Example of changing the log pattern for the default console appender:
     //
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
-
-    rollingFile name: "infoAppender", file: "logs/info.log", threshold: Level.TRACE
-    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n'), threshold: Level.WARN
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -121,11 +111,7 @@ log4j = {
            'org.codehaus.groovy.grails.commons',            // core / classloading
            'org.codehaus.groovy.grails.plugins',            // plugins
            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework'
-
-    trace infoAppender: ['org.hibernate', 'net.sf.ehcache.hibernate',
-                         'org.codehaus.groovy.grails.orm.hibernate',
-                         'org.springframework',
-                         'org.springframework.transaction'
-    ]
+           'org.springframework',
+           'org.hibernate',
+           'net.sf.ehcache.hibernate'
 }
