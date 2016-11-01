@@ -1,99 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ArtifactManager">
-    <artifact type="exploded-war" name="test:GrailsWeb exploded">
-      <root id="root">
-        <element id="javaee-facet-resources" facet="gorm-concurrency/web/GrailsWeb" />
-      </root>
-    </artifact>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="GrailsWeb">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" relative="/" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/web-app" relative="/" />
+        </webroots>
+        <sourceRoots />
+      </configuration>
+    </facet>
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="Gorm" />
+        </datasource-map>
+        <naming-strategy-map />
+      </configuration>
+    </facet>
   </component>
-  <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
-    <resourceExtensions />
-    <wildcardResourcePatterns>
-      <entry name="!?*.java" />
-      <entry name="!?*.form" />
-      <entry name="!?*.class" />
-      <entry name="!?*.groovy" />
-      <entry name="!?*.scala" />
-      <entry name="!?*.flex" />
-      <entry name="!?*.kt" />
-      <entry name="!?*.clj" />
-    </wildcardResourcePatterns>
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-    </annotationProcessing>
-  </component>
-  <component name="CopyrightManager" default="" />
-  <component name="DependencyValidationManager">
-    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
-  </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="EntryPointsManager">
-    <entry_points version="2.0" />
-  </component>
-  <component name="PDMPlugin">
-    <option name="skipTestSources" value="false" />
-  </component>
-  <component name="ProjectFileVersion" converted="true" />
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/gorm-concurrency.iml" filepath="$PROJECT_DIR$/gorm-concurrency.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gorm-concurrency-grailsPlugins.iml" filepath="$PROJECT_DIR$/gorm-concurrency-grailsPlugins.iml" />
-    </modules>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-  </component>
-  <component name="libraryTable">
-    <library name="org.hibernate:hibernate-core:3.6.10.Final" type="repository">
-      <properties maven-id="org.hibernate:hibernate-core:3.6.10.Final" />
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.6/antlr-2.7.6.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.1/commons-collections-3.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/javax/transaction/jta/1.1/jta-1.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/jboss/javaee/jboss-jacc-api_JDK4/1.1.0/jboss-jacc-api_JDK4-1.1.0.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/ant/ant/1.6.5/ant-1.6.5.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.6/antlr-2.7.6.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.1/commons-collections-3.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/javax/transaction/jta/1.1/jta-1.1.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/jboss/javaee/jboss-jacc-api_JDK4/1.1.0/jboss-jacc-api_JDK4-1.1.0.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/ant/ant/1.6.5/ant-1.6.5.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final-sources.jar!/" />
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/controllers" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/hibernate-3.6.10.16">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/hibernate-3.6.10.16/src/java" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/taglib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.54">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.54/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.54/src/groovy" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="org.hibernate:hibernate-core:3.6.10.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="groovy-2.1.9" level="application" />
+    <orderEntry type="module-library" exported="">
+      <library name="Grails User Library (test-grailsPlugins)">
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-simple/3.1.1.RELEASE/grails-datastore-simple-3.1.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm/3.1.1.RELEASE/grails-datastore-gorm-3.1.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-core/3.1.1.RELEASE/grails-datastore-core-3.1.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/liquibase/liquibase-core/2.0.5/liquibase-core-2.0.5.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/3.6.10.Final/hibernate-entitymanager-3.6.10.Final.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/4.1.0.Final/hibernate-validator-4.1.0.Final.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/3.2.8.RELEASE/spring-orm-3.2.8.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-plugin-support/3.1.1.RELEASE/grails-datastore-gorm-plugin-support-3.1.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.7/antlr-2.7.7.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-hibernate-core/3.1.1.RELEASE/grails-datastore-gorm-hibernate-core-3.1.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-hibernate/3.1.1.RELEASE/grails-datastore-gorm-hibernate-3.1.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-ehcache/3.6.10.Final/hibernate-ehcache-3.6.10.Final.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-test-support/1.0-grails-2.3/grails-datastore-test-support-1.0-grails-2.3.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/7.0.53/tomcat-embed-core-7.0.53.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/core/compiler/ecj/3.7.2/ecj-3.7.2.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/7.0.53/tomcat-embed-websocket-7.0.53.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-logging-log4j/7.0.53/tomcat-embed-logging-log4j-7.0.53.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/7.0.53/tomcat-embed-el-7.0.53.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.53/tomcat-embed-jasper-7.0.53.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina-ant/7.0.53/tomcat-catalina-ant-7.0.53.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/grails-datastore-gorm-hibernate-3.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/spring-orm-3.2.8.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/spring-tx-3.2.9.RELEASE-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/junit-4.11-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="grails-2.5.5" level="application" />
+    <orderEntry type="library" name="spring-tx-4.1.8" level="application" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
-    <option name="annotationTypeSettings">
-      <map>
-        <entry key="ExpPriority" value="-16777216;-1;-8355712;WAVE_UNDERSCORE;0;" />
-        <entry key="HighPriority" value="-65536;-1;-65536;WAVE_UNDERSCORE;1;" />
-        <entry key="IgnorePriority" value="-16777216;-1;-8650628;WAVE_UNDERSCORE;0;" />
-        <entry key="LowPriority" value="-16777216;-1;-16711936;BOXED;0;" />
-        <entry key="NormalPriority" value="-16777216;-1;-5066240;WAVE_UNDERSCORE;2;" />
-      </map>
-    </option>
     <option name="_basePreferences">
       <map>
         <entry key="property.analysisEffortLevel" value="default" />
@@ -297,14 +288,5 @@
         <entry key="STYLE" value="true" />
       </map>
     </option>
-    <option name="_annotationTypeSettings">
-      <map>
-        <entry key="ExpPriority" value="-16777216;-1;-8355712;WAVE_UNDERSCORE;0;" />
-        <entry key="HighPriority" value="-65536;-1;-65536;WAVE_UNDERSCORE;1;" />
-        <entry key="IgnorePriority" value="-16777216;-1;-8650628;WAVE_UNDERSCORE;0;" />
-        <entry key="LowPriority" value="-16777216;-1;-16711936;BOXED;0;" />
-        <entry key="NormalPriority" value="-16777216;-1;-5066240;WAVE_UNDERSCORE;2;" />
-      </map>
-    </option>
   </component>
-</project>
+</module>
