@@ -14,9 +14,13 @@ import static org.junit.Assert.*
 
 @TestMixin(IntegrationTestMixin)
 class ExampleTests {
-    final int SIZE = 2 * Runtime.getRuntime().availableProcessors()
-    final int ORIG_SIZE = 10
-    ExecutorService pool = Executors.newFixedThreadPool(SIZE)
+    // how many items to insert in setUp()
+    final int ORIG_SIZE = 1000
+    // how many items to insert via worker threads
+    final int SIZE = 200
+    // the size of the thread pool -- assumes a hyper threading cpu
+    final int POOL_SIZE = 2 * Runtime.getRuntime().availableProcessors()
+    ExecutorService pool = Executors.newFixedThreadPool(POOL_SIZE)
 
     @Before
     void setUp() {
@@ -63,37 +67,40 @@ class ExampleTests {
         final CountDownLatch finishLatch = new CountDownLatch(SIZE)
         final AtomicReferenceArray<User> userRefs = new AtomicReferenceArray<>(SIZE)
         for (int i = 0; i < SIZE; i++) {
-            final int j = i
-            //assertNotNull User.findByUsername("testUser$i")
+            final int currentIdx = i
+            assertNotNull User.findByUsername("testUser$currentIdx")
             pool.submit(new Runnable() {
                 @Override
                 void run() {
                     startLatch.await()
-                    String un = "testUser${ORIG_SIZE + j}"
+                    String un = "testUser${ORIG_SIZE + currentIdx}"
                     try {
                         User.withNewSession { session ->
-                            User.withTransaction([
-                                    name: "worker$j".toString(),
+                            boolean canFlush = true
+                            def txDefinition = [
+                                    name: "worker$currentIdx".toString(),
                                     isolationLevel:
                                             TransactionDefinition.ISOLATION_READ_COMMITTED
-                            ]) {
+                            ]
+                            User.withTransaction(txDefinition) {
                                 try {
                                     // creating new content in this session is all right
                                     assertNull(User.findByUsername(un))
                                     def newUser = new User(username: un, password: "letMeIn")
                                     assertNotNull(newUser.save())
                                     assertFalse(newUser.hasErrors())
-                                    assertEquals(0, newUser.errors.allErrors.size())
-                                    userRefs.compareAndSet(j, null, newUser)
+                                    userRefs.compareAndSet(currentIdx, null, newUser)
 
-                                    //TODO getting something inserted in another session is problematic
-                                    def someUser = User.findByUsername("testUser$j")
+                                    def someUser = User.findByUsername("testUser$currentIdx")
                                     assertNotNull someUser
                                 } catch (Throwable e) {
+                                    canFlush = false
                                     fail("you got error $e.message")
                                 }
                             }
-                            session.flush()
+                            if (canFlush) {
+                                session.flush()
+                            }
                         }
                     } finally {
                         finishLatch.countDown()
@@ -103,9 +110,13 @@ class ExampleTests {
         }
         // simulate throwing concurrent requests to another service
         startLatch.countDown()
+        // wait for workers to finish
         finishLatch.await()
+        // start the shutdown process
         pool.shutdown()
+        // wait at most 1s for the pool to finish
         pool.awaitTermination(1, TimeUnit.SECONDS)
+        // interrupt any running jobs -- there should be none
         def queuingJobs = pool.shutdownNow()
         assertEquals 0, queuingJobs.size()
         assertTrue pool.isTerminated()
